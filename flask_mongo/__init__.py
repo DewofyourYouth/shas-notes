@@ -12,10 +12,10 @@ myclient = pymongo.MongoClient(getenv("MONGODB_URI"))
 sn = myclient["shasnotes"]
 mesechtos = sn["meseches"]
 
-@app.route('/add_meseches/<string:name>/<int:pages>/<int:item_num>')
-def add_meseches(name, pages, item_num):
-    mesechtos.insert_one({"name": name, "pages": pages, "itemNum": item_num})
-    return f"{name} added!"
+# @app.route('/add_meseches/<string:name>/<int:pages>/<int:item_num>')
+# def add_meseches(name, pages, item_num):
+#     mesechtos.insert_one({"name": name, "pages": pages, "itemNum": item_num})
+#     return f"{name} added!"
 
 @app.route("/show_mesechtos")
 def show_mesechtos():
