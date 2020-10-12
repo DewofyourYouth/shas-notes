@@ -1,8 +1,12 @@
 import pymongo
 from flask import Flask
+from dotenv import load_dotenv
+from os import getenv
+
+load_dotenv()
 
 app = Flask(__name__)
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+myclient = pymongo.MongoClient(getenv("MONGODB_URI"))
 
 
 sn = myclient["shasnotes"]
