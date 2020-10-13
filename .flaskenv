@@ -1,1 +1,1 @@
-FLASK_APP=flask_mongo
+FLASK_APP=shas_notes.py
