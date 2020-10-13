@@ -1,9 +1,12 @@
 from flask import Flask
+from flask_mongo.config import Config
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 from flask_mongo import routes
+
 
 
 # @app.route('/add_meseches/<string:name>/<int:pages>/<int:item_num>')
