@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 jumbotron text-center">
+      <h1 class="display-3">Shas Notes</h1>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>Welcome {{name}}!</h3>
+      <hr />
+      <h5>Currently Learning:</h5>
+      <ul>
+        {% for m in learning%}
+        <li>{{m.name | capitalize}} <small>({{m.pages}} pages)</small></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
