@@ -1,9 +1,12 @@
 from flask import Flask
+from flask_pymongo import PyMongo
 from flask_mongo.config import Config
-
+# from flask_login import LoginManager
 
 app = Flask(__name__)
 app.config.from_object(Config)
+mongo = PyMongo(app)
+# login = LoginManager(app)
 
 from flask_mongo import routes
 
