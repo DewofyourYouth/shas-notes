@@ -1,69 +1,44 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-9 col-md-offset-9">
-      <form method="POST" action="{{ url_for('register') }}">
+    <div class="col-12 mt-5">
+      <h2 class="text-center">Register</h2>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 col-md-offset-9 mt-5">
+      <form method="POST" action="" novalidate>
+        {{form.hidden_tag()}}
         <div class="form-group row">
           <div class="col">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              class="form-control"
-              name="username"
-              placeholder="Username"
-            />
+            {{form.username.label}} {{form.username(class="form-control",
+            placeholder="ivartheboneless")}}
           </div>
           <div class="col">
-            <label for="email">email</label>
-            <input
-              type="text"
-              class="form-control"
-              name="email"
-              placeholder="email@domain.com"
-            />
+            {{form.email.label}} {{form.email(class="form-control",
+            placeholder="email@domain.com")}}
           </div>
         </div>
         <div class="form-group row">
-            <div class="col">
-                <label for="firstname">First Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="firstname"
-                  placeholder="First Name"
-                />
-
-            </div>
-            <div class="col">
-                <div class="form-group">
-                  <label for="lastname">Last Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="lastname"
-                    placeholder="Last Name"
-                  />
-
-            </div>
-        </div>
+          <div class="col">
+            {{form.first_name.label}} {{form.first_name(class="form-control",
+            placeholder="Ivar")}}
+          </div>
+          <div class="col">
+            {{form.last_name.label}} {{form.last_name(class="form-control",
+            placeholder="Ragnarsson")}}
+          </div>
         </div>
         <div class="form-group row">
-            <div class="col">
-                <label for="passwd">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  name="passwd"
-                  placeholder="Password"
-                />
-
-            </div>
-            <div class="col">
-                <button type="submit" class="btn btn-lg btn-primary mt-4">
-                  Register
-                </button>
-
-            </div>
+          <div class="col">
+            {{form.password.label}} {{form.password(class="form-control")}}
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-lg btn-primary mt-4">
+              Register
+            </button>
+          </div>
         </div>
       </form>
       <br />

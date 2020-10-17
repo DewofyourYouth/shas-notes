@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from os import getenv
 from flask import render_template, flash, redirect, session, request, url_for
 from flask_mongo import app, mongo
-from flask_mongo.forms import LoginForm
+from flask_mongo.forms import LoginForm, RegisterForm
 import bcrypt
 import pprint
 
@@ -21,7 +21,7 @@ def show_mesechtos():
     ms = mesechtos.find({"$query": {}, "$orderby": {"itemNum": 1}})
     s = ""
     for doc in ms:
-        s += f"{doc['name']}, {doc['pages']}\n"
+        s += f"{doc['hebName']}, {doc['pages']}\n"
     return s
 
 
@@ -37,21 +37,23 @@ def index():
         user = mongo.db.users.find_one({"username": username})
 
         pprint.pprint(user)
-        print(user["learning"])
         learning = []
-        for m in user["learning"]:
-            ms = mongo.db.meseches.find_one({"name": m})
-            if ms:
-                learning.append(ms)
+        print(user.get("learning"))
+        if user.get("learning") is not None:
+            for m in user.get("learning"):
+                ms = mongo.db.meseches.find_one({"name": m})
+                if ms:
+                    learning.append(ms)
 
     return render_template("index.html", name=name, learning=learning, title="Home Page")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    if request.method == "POST":
+    form = RegisterForm()
+    if form.validate_on_submit():
         users = mongo.db.users
-        form_username, first_name, last_name, password = request.form["username"], request.form["firstname"], request.form["lastname"], request.form["passwd"].encode("utf-8")
+        form_username, first_name, last_name, password = request.form["username"], request.form["first_name"], request.form["last_name"], request.form["password"].encode("utf-8")
         existing_user = users.find_one({"username": form_username})
 
         if existing_user is None:
@@ -61,7 +63,7 @@ def register():
             session["first_name"] = first_name
             return redirect(url_for("index"))
         return "That username already exists!"
-    return render_template("register.html")
+    return render_template("register.html", title="Register", form=form)
 
 
 @app.route("/login", methods=["GET", "POST"])
