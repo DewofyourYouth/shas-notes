@@ -31,17 +31,19 @@ def index():
         name = session["first_name"]
         username = session["username"]
     except KeyError:
-        name = "user"
+        print(KeyError)
 
     if name != "user":
         user = mongo.db.users.find_one({"username": username})
-
         learning = []
-        if user.get("learning") is not None:
-            for m in user.get("learning"):
-                ms = mongo.db.meseches.find_one({"name": m})
-                if ms:
-                    learning.append(ms)
+        if user is not None:
+            if user.get("learning") is not None:
+                for m in user.get("learning"):
+                    ms = mongo.db.meseches.find_one({"name": m})
+                    if ms:
+                        learning.append(ms)
+        else:
+            name = "user"  
 
     return render_template("index.html", name=name, learning=learning, title="Home Page")
 
@@ -92,6 +94,13 @@ def login():
         flash("Login requested for user {}, remember me={}".format(form.username.data, form.remember_me.data))
         return redirect("/")
     return render_template("login.html", title="Sign In", form=form)
+
+@app.route('/logout')
+def logout():
+    session['username'] = None
+    session['first_name'] = None
+    session['is_authenicated'] = False
+    return redirect('/')
 
 @app.route('/add_note')
 def add_note():
