@@ -2,6 +2,10 @@
 
 $hebrew: "Suez One", serif;
 $hebrew-input: "Cousine", monospace;
+$tab-active: wheat;
+$tab-inactive-bg: cornflowerblue;
+$tab-active-bg: darkblue;
+
 
 .hebrew {
   font-family: $hebrew;
@@ -21,15 +25,15 @@ $hebrew-input: "Cousine", monospace;
   list-style: none;
   margin-bottom: 0;
   .btn-tab {
-    border-color: darkblue;
+    border-color: $tab-active-bg;
     border-width: 1px;
     border-style: solid solid none solid;
-    background-color: cornflowerblue;
+    background-color: $tab-inactive-bg;
     border-radius: 5px 5px 0 0;
     &.active,
     &:hover {
-      background-color: darkblue;
-      color: wheat;
+      background-color: $tab-active-bg;
+      color: $tab-active;
     }
   }
 }

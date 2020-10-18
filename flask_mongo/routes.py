@@ -104,4 +104,4 @@ def logout():
 
 @app.route('/add_note')
 def add_note():
-    return render_template('addnote.html')
+    return render_template('addnote.html', title="Add Note")

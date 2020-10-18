@@ -14,3 +14,5 @@ tabBtns.forEach(item => {
         document.getElementById(el).classList.add('isActive')
     })
 })
+
+// TODO: Make similar event listener for making navbar items active
