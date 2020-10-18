@@ -1,7 +1,6 @@
 const tabBtns = document.querySelectorAll('.btn-tab')
 const tabContent = document.querySelectorAll('.tab-content')
 const regex = /tab-\d/i;
-console.log(tabBtns)
 
 
 tabBtns.forEach(item => {
