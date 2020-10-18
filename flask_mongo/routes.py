@@ -36,7 +36,6 @@ def index():
     if name != "user":
         user = mongo.db.users.find_one({"username": username})
 
-        pprint.pprint(user)
         learning = []
         print(user.get("learning"))
         if user.get("learning") is not None:
@@ -89,6 +88,7 @@ def login():
             return redirect("/register")
         session["username"] = login_user["username"]
         session["first_name"] = login_user["firstName"]
+        session["is_authenicated"] = True
         print(login_user)
         flash("Login requested for user {}, remember me={}".format(form.username.data, form.remember_me.data))
         return redirect("/")
