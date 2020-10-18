@@ -93,3 +93,7 @@ def login():
         flash("Login requested for user {}, remember me={}".format(form.username.data, form.remember_me.data))
         return redirect("/")
     return render_template("login.html", title="Sign In", form=form)
+
+@app.route('/add_note')
+def add_note():
+    return render_template('addnote.html')
