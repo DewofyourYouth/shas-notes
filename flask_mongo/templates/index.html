@@ -3,7 +3,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 jumbotron text-center">
-      <h1 class="display-3">Shas Notes</h1>
+      <h1 class="display-2 hebrew">אוצר הבלום</h1>
+      <h1 class="display-4">Shas Notes</h1>
     </div>
   </div>
 </div>
@@ -12,12 +13,23 @@
     <div class="col-12">
       <h3>Welcome {{name}}!</h3>
       <hr />
+      {% if learning != [] %}
       <h5>Currently Learning:</h5>
-      <ul>
-        {% for m in learning%}
-        <li>{{m.name | capitalize}} <small>({{m.pages}} pages)</small></li>
-        {% endfor %}
-      </ul>
+      {% for m in learning%}
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title hebrew">{{m.hebName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{m.pages}} Pages</h6>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="{{url_for('add_note')}}" class="btn btn-info card-link">Add Note</a>
+          <a href="#" class="btn btn-info card-link">Add Seder</a>
+        </div>
+      </div>
+
+      {% endfor %} {% endif %}
     </div>
   </div>
 </div>

@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Suez+One&display=swap");
+.hebrew {
+  font-family: "Suez One", serif;
+  direction: rtl;
+  text-align: right;
+}
+
+.myTabs {
+  display: flex;
+  text-align: right;
+  list-style: none;
+  margin-bottom: 0;
+}
+.myTabs .btn-tab {
+  border-color: darkblue;
+  border-width: 1px;
+  border-style: solid solid none solid;
+  background-color: cornflowerblue;
+  border-radius: 5px 5px 0 0;
+}
+.myTabs .btn-tab.active, .myTabs .btn-tab:hover {
+  background-color: darkblue;
+  color: wheat;
+}
+
+.tab-btn {
+  display: inline-block;
+  list-style: none;
+}
+
+.tab-content-wrapper {
+  border: solid 1px #000000;
+  margin-top: 0;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+.tab-content.isActive {
+  display: block;
+}
+
+/*# sourceMappingURL=styles.css.map */

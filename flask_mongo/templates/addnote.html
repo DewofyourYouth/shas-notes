@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="mt-5">Add Note</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col myTabs hebrew text-right">
+      <ul style="border-bottom: solid 1px #000000; width: 100%;">
+        <li id="tab-btn-1" class="tab-btn">
+          <button class="btn btn-tab active">פלפולי אורייתא</button>
+        </li>
+        <li id="tab-btn-2" class="tab-btn">
+          <button class="btn btn-tab">מראה מקום</button>
+        </li>
+        <li id="tab-btn-3" class="tab-btn">
+          <button class="btn btn-tab">דבר הלכה</button>
+        </li>
+        <li id="tab-btn-4" class="tab-btn">
+            <button class="btn btn-tab">מילי דאגדתא</button>
+          </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row tab-content-wrapper mt-0">
+    <div class="col">
+      <div id="tab-1" class="tab-content hebrew isActive"><h3>פלפולי אורייתא</h3>
+        <h6>שבת דף מב עמוד ב</h6>
+    </div>
+      <div id="tab-2" class="tab-content">מראה מקום</div>
+      <div id="tab-3" class="tab-content">דבר הלכה</div>
+      <div id="tab-4" class="tab-content">מילי דאגדתא</div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

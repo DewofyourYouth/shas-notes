@@ -1,24 +1,41 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
-  <h1>Sign In</h1>
-  <form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.username.label }}<br />
-      {{ form.username(size=32) }}<br />
-      {% for error in form.username.errors %}
-      <span style="color: red">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>
-      {{ form.password.label }}<br />
-      {{ form.password(size=32) }}<br />
-      {% for error in form.password.errors %}
-      <span style="color: red">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit() }}</p>
-  </form>
+  <div class="row">
+    <div class="col-12 mt-5">
+      <h1 class="text-center">Sign In</h1>
+      <hr />
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col">
+      <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div class="form-group row">
+          <div class="col">
+            <p class="text-left">
+              {{ form.username.label }}<br />
+              {{ form.username(class="form-control") }}<br />
+              {% for error in form.username.errors %}
+              <span style="color: red">[{{ error }}]</span>
+              {% endfor %}
+            </p>
+          </div>
+          <div class="col">
+            <p class="text-left">
+              {{ form.password.label }}<br />
+              {{ form.password(class="form-control") }}<br />
+              {% for error in form.password.errors %}
+              <span style="color: red">[{{ error }}]</span>
+              {% endfor %}
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+          <p>{{ form.submit(class="btn btn-lg btn-info") }}</p>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 {% endblock content %}
