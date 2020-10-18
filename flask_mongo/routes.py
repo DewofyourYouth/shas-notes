@@ -37,7 +37,6 @@ def index():
         user = mongo.db.users.find_one({"username": username})
 
         learning = []
-        print(user.get("learning"))
         if user.get("learning") is not None:
             for m in user.get("learning"):
                 ms = mongo.db.meseches.find_one({"name": m})
@@ -79,7 +78,7 @@ def login():
         login_user = users.find_one({"username": form.username.data})
         if login_user:
             if bcrypt.checkpw(form.password.data.encode("utf-8"), login_user["pwd"]):
-                print("it matches")
+                pass
             else:
                 flash("Wrong password")
                 return redirect("/login")
