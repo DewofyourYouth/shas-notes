@@ -4,6 +4,10 @@
   direction: rtl;
   text-align: right;
 }
+.hebrew.heb-title {
+  text-align: center;
+  text-emphasis: bold;
+}
 
 .hebrew-input {
   font-family: "Cousine", monospace;

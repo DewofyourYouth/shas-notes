@@ -2,23 +2,23 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1 class="mt-5">Add Note</h1>
+      <h1 class="m-5 hebrew">הוסף הערה</h1>
     </div>
   </div>
   <div class="row">
     <div class="col myTabs hebrew text-right">
       <ul style="border-bottom: solid 1px #000000; width: 100%">
         <li id="tab-btn-1" class="tab-btn">
-          <button class="btn btn-tab active">פלפולי אורייתא</button>
+          <button class="btn btn-tab tab-1 active">פלפולי אורייתא</button>
         </li>
         <li id="tab-btn-2" class="tab-btn">
-          <button class="btn btn-tab">מראה מקום</button>
+          <button class="btn btn-tab tab-2">מראה מקום</button>
         </li>
         <li id="tab-btn-3" class="tab-btn">
-          <button class="btn btn-tab">דבר הלכה</button>
+          <button class="btn btn-tab tab-3">דבר הלכה</button>
         </li>
         <li id="tab-btn-4" class="tab-btn">
-          <button class="btn btn-tab">מילי דאגדתא</button>
+          <button class="btn btn-tab tab-4">מילי דאגדתא</button>
         </li>
       </ul>
     </div>
@@ -27,6 +27,7 @@
     <div class="col">
       <div id="tab-1" class="tab-content hebrew isActive">
         <h3>פלפולי אורייתא</h3>
+        <hr />
         <h6>שבת דף מב עמוד ב</h6>
         <form action="">
           <div class="form-group">
@@ -44,14 +45,24 @@
           </div>
 
           <div class="form-group">
-            <button>שמור</button>
-            <input type="submit" value="סיימתי" />
+            <button class="btn btn-info">שמור</button>
+            <button class="btn btn-warning">מחק</button>
+            <input class="btn btn-success" type="submit" value="סיימתי" />
           </div>
         </form>
       </div>
-      <div id="tab-2" class="tab-content">מראה מקום</div>
-      <div id="tab-3" class="tab-content">דבר הלכה</div>
-      <div id="tab-4" class="tab-content">מילי דאגדתא</div>
+      <div id="tab-2" class="tab-content hebrew">
+        <h3>מראה מקום</h3>
+        <hr />
+      </div>
+      <div id="tab-3" class="tab-content hebrew">
+        <h3>דבר הלכה</h3>
+        <hr />
+      </div>
+      <div id="tab-4" class="tab-content hebrew">
+        <h3>מילי דאגדתא</h3>
+        <hr />
+      </div>
     </div>
   </div>
 </div>
