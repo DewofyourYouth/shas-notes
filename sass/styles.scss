@@ -1,43 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
 
-$hebrew: 'Suez One', serif;
+$hebrew: "Suez One", serif;
+$hebrew-input: "Cousine", monospace;
 
 .hebrew {
-    font-family: $hebrew;
-    direction: rtl;
-    text-align: right;
+  font-family: $hebrew;
+  direction: rtl;
+  text-align: right;
 }
-
+.hebrew-input {
+  font-family: $hebrew-input;
+}
 .myTabs {
-    display: flex;
-    text-align: right;
-    list-style: none;
-    margin-bottom: 0;
-    .btn-tab {
-        border-color: darkblue;
-        border-width: 1px;
-        border-style: solid solid none solid;
-        background-color: cornflowerblue;
-        border-radius: 5px 5px 0 0;
-        &.active, &:hover {
-            background-color: darkblue;
-            color: wheat;
-        }
+  display: flex;
+  text-align: right;
+  list-style: none;
+  margin-bottom: 0;
+  .btn-tab {
+    border-color: darkblue;
+    border-width: 1px;
+    border-style: solid solid none solid;
+    background-color: cornflowerblue;
+    border-radius: 5px 5px 0 0;
+    &.active,
+    &:hover {
+      background-color: darkblue;
+      color: wheat;
     }
+  }
 }
 
 .tab-btn {
-    display: inline-block;
-    list-style: none;
+  display: inline-block;
+  list-style: none;
 }
 .tab-content-wrapper {
-    border: solid 1px #000000;
-    margin-top: 0;
+  border: solid 1px #000000;
+  margin-top: 0;
 }
 .tab-content {
-    display: none;
-    padding: 20px;
-    &.isActive {
-        display: block;
-    }
+  display: none;
+  padding: 20px;
+  &.isActive {
+    display: block;
+  }
 }
