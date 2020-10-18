@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 jumbotron text-center">
-      <h1 class="display-2 hebrew">אוצר הבלום</h1>
+      <h1 class="display-2 hebrew heb-title">אוצר הבלום</h1>
       <h1 class="display-4">Shas Notes</h1>
     </div>
   </div>
@@ -16,16 +16,17 @@
       {% if learning != [] %}
       <h5>Currently Learning:</h5>
       {% for m in learning%}
-      <div class="card">
+      <div class="card hebrew">
         <div class="card-body">
-          <h3 class="card-title hebrew">{{m.hebName}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{m.pages}} Pages</h6>
+          <h3 class="card-title ">{{m.hebName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{m.pages}} דפים</h6>
+          <p class="card-text text-muted">{{"%.2f"|format(41/m.pages * 100)}}% נלמד</p>
+          <p class="card-text"></p> אתה לומד דף מב עמוד ב &nbsp;&nbsp;&nbsp;<button class="btn btn-success">סיימתי</button></p>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            דוגמא של סדר - כאן תהיה מידע על הדף שבו אתה לומד עכשיו ההערות האחרונות שלך.
           </p>
-          <a href="{{url_for('add_note')}}" class="btn btn-info card-link">Add Note</a>
-          <a href="#" class="btn btn-info card-link">Add Seder</a>
+          <p class="card-text">גם הרשימות עם כוכב וכו'</p>
+          <a href="{{url_for('add_note')}}" class="btn btn-info card-link">הוסף הערה</a>
         </div>
       </div>
 

@@ -7,6 +7,10 @@ $hebrew-input: "Cousine", monospace;
   font-family: $hebrew;
   direction: rtl;
   text-align: right;
+  &.heb-title {
+      text-align: center;
+      text-emphasis: bold;
+  }
 }
 .hebrew-input {
   font-family: $hebrew-input;
