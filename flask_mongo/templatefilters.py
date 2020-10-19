@@ -46,7 +46,7 @@ def convert_to_gematria(num: int) -> str:
     """Converts and int between 1 - 999 to a gematria string
 
     Args:
-        num (int): the number ti convert
+        num (int): the number to convert
 
     Returns:
         str: The gematria string
