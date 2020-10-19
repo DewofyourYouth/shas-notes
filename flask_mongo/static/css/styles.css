@@ -17,6 +17,7 @@
 
 .jumbotron {
   padding: 130px 30px;
+  border-radius: 0;
   background: linear-gradient(to right, rgba(246, 131, 15, 0.604), rgba(246, 131, 15, 0.604)), url(http://localhost:5000/static/img//shas.png) no-repeat center right fixed;
   background-size: cover;
   color: #272727;
