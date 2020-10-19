@@ -3,14 +3,49 @@
 
 body {
   background-color: $body-bg;
+  color: $dark-txt;
+}
+
+.navbar {
+  padding-bottom: 0 !important;
+}
+
+.nav-item {
+  border-bottom: solid 4px transparent;
+  vertical-align: bottom;
+  padding-bottom: .6rem;
+  &:hover, &.active{
+    border-bottom: solid 4px $logo-color;
+    a.nav-link {
+      color: $logo-color !important;
+      font-weight: 600 !important;
+    }
+  }
+}
+
+.navbar-brand {
+  color: $logo-color !important;
+  font-size: 2.2rem;
+  padding-top: 0;
+  margin-top: -1rem;
+}
+
+.text-muted {
+  color: $light-txt !important;
+}
+
+.site-title {
+  font-family: $title;
+  font-size: 3.3rem;
 }
 
 .hebrew {
   font-family: $hebrew;
   direction: rtl;
   text-align: right;
-  color: $dark-txt !important;
+  color: $dark-txt;
   &.heb-title {
+      color: $very-dark-txt;
       text-align: center;
       text-emphasis: bold;
   }
@@ -33,14 +68,14 @@ body {
     border-radius: 5px 5px 0 0;
     &.active,
     &:hover {
-      background-color: $tab-active-bg;
+      background-color: $logo-color;
       color: $tab-active;
       transition-duration: 500ms;
     }
 
     &:hover, &:focus {
       outline: 0 none;
-      filter: drop-shadow(2px 2px 5px $tab-active-bg);
+      filter: drop-shadow(2px 2px 5px $tab-active-ds);
       transition-duration: 500ms;
     }
   }
