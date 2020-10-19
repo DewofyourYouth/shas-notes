@@ -9,6 +9,7 @@ mongo = PyMongo(app)
 # login = LoginManager(app)
 
 from flask_mongo import routes
+from flask_mongo.utils import convert_to_gematria, convert_daf_to_gematria
 
 
 

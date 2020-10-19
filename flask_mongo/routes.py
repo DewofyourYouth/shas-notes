@@ -5,7 +5,7 @@ from flask import render_template, flash, redirect, session, request, url_for
 from flask_mongo import app, mongo
 from flask_mongo.forms import LoginForm, RegisterForm
 import bcrypt
-import pprint
+
 
 load_dotenv()
 

@@ -9,13 +9,13 @@
 }
 
 .jumbo-wrap {
-  filter: drop-shadow(0px 2px 5px #6b1403);
+  filter: drop-shadow(0px 5px 5px darken($logo-color, 15));
   padding: 0;
 }
 .jumbotron {
-  padding: 130px 30px;
+  padding: 80px 30px 130px;
   border-radius: 0;
-  background: linear-gradient(to right, $header-bg, $header-bg),
+  background: linear-gradient(to right, opacify($header-bg, .9), $header-bg),
     url(#{$asset-path}/shas.png) no-repeat center right fixed;
   background-size: cover;
   color:$very-dark-txt;

@@ -12,9 +12,9 @@
       <div class="card hebrew">
         <div class="card-body">
           <h3 class="card-title ">{{m.hebName}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{m.pages}} דפים</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{m.pages | gematria }} דפים</h6>
           <p class="card-text text-muted">{{"%.2f"|format(41/m.pages * 100)}}% נלמד</p>
-          <p class="card-text"></p> אתה לומד דף מב עמוד ב &nbsp;&nbsp;&nbsp;<button class="btn btn-success">סיימתי</button></p>
+          <p class="card-text"></p> אתה לומד דף {{ 41 | daf_gematria }} עמוד ב &nbsp;&nbsp;&nbsp;<button class="btn btn-success">סיימתי</button></p>
           <p class="card-text">
             דוגמא של סדר - כאן תהיה מידע על הדף שבו אתה לומד עכשיו ההערות האחרונות שלך.
           </p>
