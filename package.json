@@ -1,4 +1,24 @@
 {
+  "name": "flask-mongo",
+  "description": "A flask app for taking better notes while learning shas (Talmud).",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DewofyourYouth/shas-notes.git"
+  },
+  "author": "Jacob Shore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DewofyourYouth/shas-notes/issues"
+  },
+  "homepage": "https://github.com/DewofyourYouth/shas-notes#readme",
   "devDependencies": {
     "prettier": "2.1.2",
     "jsdom-quokka-plugin": "^1.0.16"
