@@ -1,16 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
+@import 'vars';
+@import 'header';
 
-$hebrew: "Suez One", serif;
-$hebrew-input: "Cousine", monospace;
-$tab-active: wheat;
-$tab-inactive-bg: cornflowerblue;
-$tab-active-bg: darkblue;
-
+body {
+  background-color: $body-bg;
+}
 
 .hebrew {
   font-family: $hebrew;
   direction: rtl;
   text-align: right;
+  color: $dark-txt !important;
   &.heb-title {
       text-align: center;
       text-emphasis: bold;
@@ -25,25 +24,39 @@ $tab-active-bg: darkblue;
   list-style: none;
   margin-bottom: 0;
   .btn-tab {
-    border-color: $tab-active-bg;
-    border-width: 1px;
+    border-color: $tab-inactive-bg;
+    border-width: 2.5px;
+    font-size: 1.3rem;
     border-style: solid solid none solid;
     background-color: $tab-inactive-bg;
+    padding: 10px 20px;
     border-radius: 5px 5px 0 0;
     &.active,
     &:hover {
       background-color: $tab-active-bg;
       color: $tab-active;
+      transition-duration: 500ms;
+    }
+
+    &:hover, &:focus {
+      outline: 0 none;
+      filter: drop-shadow(2px 2px 5px $tab-active-bg);
+      transition-duration: 500ms;
     }
   }
 }
 
+.card {
+  background-color: $tab-content-wrapper;
+}
 .tab-btn {
   display: inline-block;
   list-style: none;
 }
 .tab-content-wrapper {
-  border: solid 1px #000000;
+  border: solid 3px $dark-txt;
+  border-radius: 10px;
+  background-color: $tab-content-wrapper;
   margin-top: 0;
 }
 .tab-content {

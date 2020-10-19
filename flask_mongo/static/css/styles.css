@@ -1,8 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
+.jumbotron {
+  background-color: #d9e4dd;
+  color: #555555;
+  filter: drop-shadow(2px 2px 5px #555555);
+}
+
+.navbar-light {
+  background-color: #d6d2c4 !important;
+  border-bottom: #555555;
+  border-width: 2px;
+  z-index: 1000;
+  filter: drop-shadow(2px 2px 5px #555555);
+}
+
+body {
+  background-color: #fbf7f0;
+}
+
 .hebrew {
   font-family: "Suez One", serif;
   direction: rtl;
   text-align: right;
+  color: #555555 !important;
 }
 .hebrew.heb-title {
   text-align: center;
@@ -20,15 +40,27 @@
   margin-bottom: 0;
 }
 .myTabs .btn-tab {
-  border-color: darkblue;
-  border-width: 1px;
+  border-color: #eececd;
+  border-width: 2.5px;
+  font-size: 1.3rem;
   border-style: solid solid none solid;
-  background-color: cornflowerblue;
+  background-color: #eececd;
+  padding: 10px 20px;
   border-radius: 5px 5px 0 0;
 }
 .myTabs .btn-tab.active, .myTabs .btn-tab:hover {
-  background-color: darkblue;
-  color: wheat;
+  background-color: #fa7f72;
+  color: #fff5ea;
+  transition-duration: 500ms;
+}
+.myTabs .btn-tab:hover, .myTabs .btn-tab:focus {
+  outline: 0 none;
+  filter: drop-shadow(2px 2px 5px #fa7f72);
+  transition-duration: 500ms;
+}
+
+.card {
+  background-color: #fdfdfd;
 }
 
 .tab-btn {
@@ -37,7 +69,9 @@
 }
 
 .tab-content-wrapper {
-  border: solid 1px #000000;
+  border: solid 3px #555555;
+  border-radius: 10px;
+  background-color: #fdfdfd;
   margin-top: 0;
 }
 

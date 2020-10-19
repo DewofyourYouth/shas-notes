@@ -1,0 +1,18 @@
+@import 'vars';
+
+.jumbotron {
+    background-color: $header-bg;
+    color: $dark-txt;
+    filter: drop-shadow(2px 2px 5px $dark-txt);
+
+}
+
+.navbar-light {
+    background-color:  $nav-bg !important;
+    border-bottom: $dark-txt;
+    border-width: 2px;
+    z-index: 1000;
+    filter: drop-shadow(2px 2px 5px $dark-txt);
+
+}
+
