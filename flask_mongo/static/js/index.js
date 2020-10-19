@@ -15,4 +15,3 @@ tabBtns.forEach(item => {
     })
 })
 
-// TODO: Make similar event listener for making navbar items active

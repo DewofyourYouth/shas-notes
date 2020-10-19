@@ -15,6 +15,7 @@
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
   </head>
+  <!-- TODO make active link active -->
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand hebrew" href="/">אוצר הבלום</a>
@@ -37,7 +38,6 @@
             >
           </li>
           {% if session['is_authenicated'] %}
-
           <li class="nav-item">
             <a class="nav-link" href="/add_note">Add Note</a>
           </li>
