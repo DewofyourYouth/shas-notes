@@ -1,17 +1,51 @@
-@import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
+@import 'vars';
+@import 'header';
 
-$hebrew: "Suez One", serif;
-$hebrew-input: "Cousine", monospace;
-$tab-active: wheat;
-$tab-inactive-bg: cornflowerblue;
-$tab-active-bg: darkblue;
+body {
+  background-color: $body-bg;
+  color: $dark-txt;
+}
 
+.navbar {
+  padding-bottom: 0 !important;
+}
+
+.nav-item {
+  border-bottom: solid 4px transparent;
+  vertical-align: bottom;
+  padding-bottom: .6rem;
+  &:hover, &.active{
+    border-bottom: solid 4px $logo-color;
+    a.nav-link {
+      color: $logo-color !important;
+      font-weight: 600 !important;
+    }
+  }
+}
+
+.navbar-brand {
+  color: $logo-color !important;
+  font-size: 2.2rem;
+  padding-top: 0;
+  margin-top: -1rem;
+}
+
+.text-muted {
+  color: $light-txt !important;
+}
+
+.site-title {
+  font-family: $title;
+  font-size: 3.3rem;
+}
 
 .hebrew {
   font-family: $hebrew;
   direction: rtl;
   text-align: right;
+  color: $dark-txt;
   &.heb-title {
+      color: $very-dark-txt;
       text-align: center;
       text-emphasis: bold;
   }
@@ -25,25 +59,41 @@ $tab-active-bg: darkblue;
   list-style: none;
   margin-bottom: 0;
   .btn-tab {
-    border-color: $tab-active-bg;
-    border-width: 1px;
+    border-color: $tab-inactive-bg;
+    border-width: 2.5px;
+    font-size: 1.3rem;
     border-style: solid solid none solid;
-    background-color: $tab-inactive-bg;
+    background-color: $nav-bg;
+    padding: 10px 20px;
     border-radius: 5px 5px 0 0;
     &.active,
     &:hover {
-      background-color: $tab-active-bg;
+      background-color: $logo-color;
       color: $tab-active;
+      filter: drop-shadow(0 -3px 4px $tab-active-ds);
+
+      transition-duration: 500ms;
+    }
+
+    &:hover, &:focus {
+      outline: 0 none;
+      filter: drop-shadow(0 -3px 4px $tab-active-ds);
+      transition-duration: 500ms;
     }
   }
 }
 
+.card {
+  background-color: $tab-content-wrapper;
+}
 .tab-btn {
   display: inline-block;
   list-style: none;
 }
 .tab-content-wrapper {
-  border: solid 1px #000000;
+  border: solid 3px $dark-txt;
+  border-radius: 10px;
+  background-color: $tab-content-wrapper;
   margin-top: 0;
 }
 .tab-content {
@@ -53,3 +103,4 @@ $tab-active-bg: darkblue;
     display: block;
   }
 }
+

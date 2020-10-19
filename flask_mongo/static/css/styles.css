@@ -1,10 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cousine&family=Suez+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+.navbar-light {
+  background-color: #fff8cd !important;
+  border-bottom: #3b3b3b;
+  border-width: 2px;
+  z-index: 1000;
+  filter: drop-shadow(2px 2px 5px #9a8400);
+}
+
+.jumbo-wrap {
+  filter: drop-shadow(0px 2px 5px #6b1403);
+  padding: 0;
+}
+
+.jumbotron {
+  padding: 130px 30px;
+  background: linear-gradient(to right, rgba(246, 131, 15, 0.604), rgba(246, 131, 15, 0.604)), url(http://localhost:5000/static/img//shas.png) no-repeat center right fixed;
+  background-size: cover;
+  color: #272727;
+  clip-path: polygon(0 0, 100% 0%, 100% 77%, 0 100%);
+}
+
+body {
+  background-color: #fdfbf7;
+  color: #3b3b3b;
+}
+
+.navbar {
+  padding-bottom: 0 !important;
+}
+
+.nav-item {
+  border-bottom: solid 4px transparent;
+  vertical-align: bottom;
+  padding-bottom: 0.6rem;
+}
+.nav-item:hover, .nav-item.active {
+  border-bottom: solid 4px #bb2205;
+}
+.nav-item:hover a.nav-link, .nav-item.active a.nav-link {
+  color: #bb2205 !important;
+  font-weight: 600 !important;
+}
+
+.navbar-brand {
+  color: #bb2205 !important;
+  font-size: 2.2rem;
+  padding-top: 0;
+  margin-top: -1rem;
+}
+
+.text-muted {
+  color: #abaca4 !important;
+}
+
+.site-title {
+  font-family: "Alfa Slab One", cursive;
+  font-size: 3.3rem;
+}
+
 .hebrew {
   font-family: "Suez One", serif;
   direction: rtl;
   text-align: right;
+  color: #3b3b3b;
 }
 .hebrew.heb-title {
+  color: #272727;
   text-align: center;
   text-emphasis: bold;
 }
@@ -20,15 +84,28 @@
   margin-bottom: 0;
 }
 .myTabs .btn-tab {
-  border-color: darkblue;
-  border-width: 1px;
+  border-color: #eececd;
+  border-width: 2.5px;
+  font-size: 1.3rem;
   border-style: solid solid none solid;
-  background-color: cornflowerblue;
+  background-color: #fff8cd;
+  padding: 10px 20px;
   border-radius: 5px 5px 0 0;
 }
 .myTabs .btn-tab.active, .myTabs .btn-tab:hover {
-  background-color: darkblue;
-  color: wheat;
+  background-color: #bb2205;
+  color: #fff5ea;
+  filter: drop-shadow(0 -3px 4px #fa7f72);
+  transition-duration: 500ms;
+}
+.myTabs .btn-tab:hover, .myTabs .btn-tab:focus {
+  outline: 0 none;
+  filter: drop-shadow(0 -3px 4px #fa7f72);
+  transition-duration: 500ms;
+}
+
+.card {
+  background-color: #fdfdfd;
 }
 
 .tab-btn {
@@ -37,7 +114,9 @@
 }
 
 .tab-content-wrapper {
-  border: solid 1px #000000;
+  border: solid 3px #3b3b3b;
+  border-radius: 10px;
+  background-color: #fdfdfd;
   margin-top: 0;
 }
 
