@@ -16,8 +16,8 @@
 }
 
 .jumbotron {
-  padding: 150px 30px;
-  background: linear-gradient(to right, rgba(246, 131, 15, 0.604), rgba(246, 131, 15, 0.604)), url(http://localhost:5000/static/img/shas.png) no-repeat center right fixed;
+  padding: 130px 30px;
+  background: linear-gradient(to right, rgba(246, 131, 15, 0.604), rgba(246, 131, 15, 0.604)), url(http://localhost:5000/static/img//shas.png) no-repeat center right fixed;
   background-size: cover;
   color: #272727;
   clip-path: polygon(0 0, 100% 0%, 100% 77%, 0 100%);
@@ -88,18 +88,19 @@ body {
   border-width: 2.5px;
   font-size: 1.3rem;
   border-style: solid solid none solid;
-  background-color: #eececd;
+  background-color: #fff8cd;
   padding: 10px 20px;
   border-radius: 5px 5px 0 0;
 }
 .myTabs .btn-tab.active, .myTabs .btn-tab:hover {
   background-color: #bb2205;
   color: #fff5ea;
+  filter: drop-shadow(0 -3px 4px #fa7f72);
   transition-duration: 500ms;
 }
 .myTabs .btn-tab:hover, .myTabs .btn-tab:focus {
   outline: 0 none;
-  filter: drop-shadow(2px 2px 5px #fa7f72);
+  filter: drop-shadow(0 -3px 4px #fa7f72);
   transition-duration: 500ms;
 }
 

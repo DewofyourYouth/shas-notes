@@ -13,9 +13,9 @@
   padding: 0;
 }
 .jumbotron {
-  padding: 150px 30px;
+  padding: 130px 30px;
   background: linear-gradient(to right, $header-bg, $header-bg),
-    url(http://localhost:5000/static/img/shas.png) no-repeat center right fixed;
+    url(#{$asset-path}/shas.png) no-repeat center right fixed;
   background-size: cover;
   color:$very-dark-txt;
   clip-path: polygon(0 0, 100% 0%, 100% 77%, 0 100%);

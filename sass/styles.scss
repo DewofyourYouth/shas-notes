@@ -63,19 +63,21 @@ body {
     border-width: 2.5px;
     font-size: 1.3rem;
     border-style: solid solid none solid;
-    background-color: $tab-inactive-bg;
+    background-color: $nav-bg;
     padding: 10px 20px;
     border-radius: 5px 5px 0 0;
     &.active,
     &:hover {
       background-color: $logo-color;
       color: $tab-active;
+      filter: drop-shadow(0 -3px 4px $tab-active-ds);
+
       transition-duration: 500ms;
     }
 
     &:hover, &:focus {
       outline: 0 none;
-      filter: drop-shadow(2px 2px 5px $tab-active-ds);
+      filter: drop-shadow(0 -3px 4px $tab-active-ds);
       transition-duration: 500ms;
     }
   }
