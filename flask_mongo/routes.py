@@ -61,6 +61,7 @@ def register():
             users.insert({"username": form_username, "firstName": first_name, "lastName": last_name, "pwd": hashpass})
             session["username"] = form_username
             session["first_name"] = first_name
+            flash(f"User {form_username} successfully created!")
             return redirect(url_for("index"))
         return "That username already exists!"
     return render_template("register.html", title="Register", form=form)
@@ -91,12 +92,12 @@ def login():
         session["first_name"] = login_user["firstName"]
         session["is_authenicated"] = True
         print(login_user)
-        flash("Login requested for user {}, remember me={}".format(form.username.data, form.remember_me.data))
         return redirect("/")
     return render_template("login.html", title="Sign In", form=form)
 
 @app.route('/logout')
 def logout():
+    flash(f"User {session['username']} has been logged out!")
     session['username'] = None
     session['first_name'] = None
     session['is_authenicated'] = False
