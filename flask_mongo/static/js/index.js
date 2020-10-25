@@ -1,17 +1,20 @@
-const tabBtns = document.querySelectorAll('.btn-tab') //?
-const tabContent = document.querySelectorAll('.tab-content') //?
+const tabBtns = document.querySelectorAll(".btn-tab"); //?
+const tabContent = document.querySelectorAll(".tab-content"); //?
 const regex = /tab-\d/i;
 
+const targetid = document.getElementById("targetid");
 
-tabBtns.forEach(item => { 
-    item.addEventListener('click', event => {
-        event.preventDefault()
-        tabBtns.forEach(tabs => {tabs.classList.remove('active')})
-        tabContent.forEach(content => content.classList.remove('isActive'))
+// this listens for clicks on the tab buttons and adjusts the tabs accordingly
+tabBtns.forEach((item) => {
+  item.addEventListener("click", (event) => {
+    event.preventDefault();
+    tabBtns.forEach((tabs) => {
+      tabs.classList.remove("active");
+    });
+    tabContent.forEach((content) => content.classList.remove("isActive"));
 
-        event.target.classList.add('active')    
-        const el = String(event.target.classList).match(regex)[0] 
-        document.getElementById(el).classList.add('isActive')
-    })
-})
-
+    event.target.classList.add("active");
+    const el = String(event.target.classList).match(regex)[0];
+    document.getElementById(el).classList.add("isActive");
+  });
+});

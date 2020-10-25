@@ -1,3 +1,4 @@
+import datetime
 from flask_mongo import app
 
 GEM_VALS = {
@@ -41,6 +42,22 @@ GEM_VALS = {
 }
 
 
+def gematria_to_int(gem_str: str) -> int:
+    gem_arr = [c for c in gem_str]
+    print(gem_arr)
+    ones, tens, hundreds = GEM_VALS["gem_ones"], GEM_VALS["gem_tens"], GEM_VALS["gem_hundreds"]
+    gems = [
+        {"list": ones, "times": 1},
+        {"list": tens, "times": 10},
+        {"list": hundreds, "times": 100},
+    ]
+    num_arr = [
+        (gem.get("list", None).index(letter) * gem["times"]) if letter != "ט" else 9
+        for gem, letter in zip(gems, gem_arr)
+    ]
+    return sum(num_arr)
+
+
 @app.template_filter("gematria")
 def convert_to_gematria(num: int) -> str:
     """Converts and int between 1 - 999 to a gematria string
@@ -51,7 +68,12 @@ def convert_to_gematria(num: int) -> str:
     Returns:
         str: The gematria string
     """
-    gem_ones, gem_tens, gem_hundreds, gem_edgecases = GEM_VALS["gem_ones"], GEM_VALS["gem_tens"], GEM_VALS["gem_hundreds"], GEM_VALS["gem_edgecases"]
+    gem_ones, gem_tens, gem_hundreds, gem_edgecases = (
+        GEM_VALS["gem_ones"],
+        GEM_VALS["gem_tens"],
+        GEM_VALS["gem_hundreds"],
+        GEM_VALS["gem_edgecases"],
+    )
     num_str = str(num)
     nums = [gem_ones, gem_tens, gem_hundreds]
     ans = []
@@ -80,3 +102,9 @@ def convert_daf_to_gematria(num: int) -> str:
     """
     num = num + 1
     return convert_to_gematria(num)
+
+
+@app.template_filter("note_date")
+def format_timestring_for_note(ts: str) -> str:
+    dt = datetime.datetime.fromisoformat(ts)
+    return dt.strftime("%a, %b %d, %Y")

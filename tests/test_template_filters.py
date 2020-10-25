@@ -1,4 +1,4 @@
-from flask_mongo.templatefilters import convert_to_gematria
+from flask_mongo.template_filters import convert_to_gematria, convert_daf_to_gematria
 
 def test_convert_to_gematria_under_ten():
     assert convert_to_gematria(9) == "ט"
@@ -14,3 +14,6 @@ def test_convert_to_gematria_over_ten():
 def test_convert_to_gematria_with_zero():
     assert convert_to_gematria(103) == "קג"
     assert convert_to_gematria(0) == ""
+
+def test_convert_daf_to_gematria_under_10():
+    assert convert_daf_to_gematria(9) == 'י'

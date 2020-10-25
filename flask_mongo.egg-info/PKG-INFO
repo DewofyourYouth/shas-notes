@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: flask-mongo
+Version: 0.1.0
+Summary: A flask app for taking better notes while learning shas (Talmud).
+Home-page: UNKNOWN
+Author: DewofyourYouth
+Author-email: jacobshore@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.9,<4.0

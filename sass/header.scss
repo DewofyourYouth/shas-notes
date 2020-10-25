@@ -2,22 +2,22 @@
 
 .navbar-light {
   background-color: $nav-bg !important;
-  border-bottom: $dark-txt;
+  border-bottom: $grey-txt;
   border-width: 2px;
   z-index: 1000;
   filter: drop-shadow(2px 2px 5px darken($nav-bg, 60));
 }
 
 .jumbo-wrap {
-  filter: drop-shadow(0px 5px 5px darken($logo-color, 15));
+  filter: drop-shadow(0px 5px 5px darken($logo-red, 15));
   padding: 0;
 }
 .jumbotron {
   padding: 80px 30px 130px;
   border-radius: 0;
-  background: linear-gradient(to right, opacify($header-bg, .9), $header-bg),
+  background: linear-gradient(to left, darken(opacify($header-orange, .6), 10), $header-orange),
     url(#{$asset-path}/shas.png) no-repeat center right fixed;
   background-size: cover;
-  color:$very-dark-txt;
+  color:$dark-blue-txt;
   clip-path: polygon(0 0, 100% 0%, 100% 77%, 0 100%);
 }

@@ -1,9 +1,10 @@
-@import 'vars';
-@import 'header';
+@import "vars";
+@import "header";
+@import "buttons";
 
 body {
   background-color: $body-bg;
-  color: $dark-txt;
+  color: $grey-txt;
 }
 
 .navbar {
@@ -13,18 +14,19 @@ body {
 .nav-item {
   border-bottom: solid 4px transparent;
   vertical-align: bottom;
-  padding-bottom: .6rem;
-  &:hover, &.active{
-    border-bottom: solid 4px $logo-color;
+  padding-bottom: 0.6rem;
+  &:hover,
+  &.active {
+    border-bottom: solid 4px $logo-red;
     a.nav-link {
-      color: $logo-color !important;
+      color: $logo-red !important;
       font-weight: 600 !important;
     }
   }
 }
 
 .navbar-brand {
-  color: $logo-color !important;
+  color: $logo-red !important;
   font-size: 2.2rem;
   padding-top: 0;
   margin-top: -1rem;
@@ -43,12 +45,12 @@ body {
   font-family: $hebrew;
   direction: rtl;
   text-align: right;
-  color: $dark-txt;
+  color: $grey-txt;
   &.heb-title {
-      color: $very-dark-txt;
-      font-size: 6rem;
-      text-align: center;
-      text-emphasis: bold;
+    color: $dark-blue-txt;
+    font-size: 6rem;
+    text-align: center;
+    text-emphasis: bold;
   }
 }
 .hebrew-input {
@@ -69,14 +71,15 @@ body {
     border-radius: 5px 5px 0 0;
     &.active,
     &:hover {
-      background-color: $logo-color;
+      background-color: $logo-red;
       color: $tab-active;
       filter: drop-shadow(0 -3px 4px $tab-active-ds);
 
       transition-duration: 500ms;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       outline: 0 none;
       filter: drop-shadow(0 -3px 4px $tab-active-ds);
       transition-duration: 500ms;
@@ -92,7 +95,7 @@ body {
   list-style: none;
 }
 .tab-content-wrapper {
-  border: solid 3px $dark-txt;
+  border: solid 3px $grey-txt;
   border-radius: 10px;
   background-color: $tab-content-wrapper;
   margin-top: 0;
@@ -105,3 +108,32 @@ body {
   }
 }
 
+.hebrew-note {
+  width: 100%;
+  direction: rtl;
+  text-align: right;
+  margin: 40px 20px;
+  padding: 10px 20px;
+  border-bottom: solid 2px $light-txt;
+  .note-header {
+    border-bottom: dotted 1px $light-txt;
+    h5 {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .note-meta {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+      flex-wrap: wrap;
+      div {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  p {
+    white-space: pre;
+  }
+}

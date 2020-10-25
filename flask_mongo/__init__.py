@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_pymongo import PyMongo
 from flask_mongo.config import Config
+
 # from flask_login import LoginManager
 
 app = Flask(__name__)
@@ -9,13 +10,14 @@ mongo = PyMongo(app)
 # login = LoginManager(app)
 
 from flask_mongo import routes
-from flask_mongo.utils import convert_to_gematria, convert_daf_to_gematria
-
+from flask_mongo.template_filters import (
+    convert_to_gematria,
+    convert_daf_to_gematria,
+    format_timestring_for_note,
+)
 
 
 # @app.route('/add_meseches/<string:name>/<int:pages>/<int:item_num>')
 # def add_meseches(name, pages, item_num):
 #     mesechtos.insert_one({"name": name, "pages": pages, "itemNum": item_num})
 #     return f"{name} added!"
-
-

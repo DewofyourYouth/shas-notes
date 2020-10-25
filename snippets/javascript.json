@@ -1,0 +1,22 @@
+{
+  "a variable that targets a DOM element by ID": {
+    "prefix": "elid",
+    "body": ["const ${0:targetid} = document.getElementById('${0:targetid}')"]
+  },
+  "Add event listeners for items in an array": {
+    "prefix": "arrev",
+    "body": [
+      "${1:arrayName}.forEach((${2:nameItem}) => {",
+      "  ${2:nameItem}.addEventListener(\"${3:eventType}\", (event) => {",
+      "    ${0: // do stuff here}",
+      "  });",
+      "});"
+    ]
+  },
+  "make an array of all elements of a class": {
+    "prefix": "qryslc",
+    "body": [
+      "const ${1:className} = document.querySelectorAll(\".${0:class-name}\");"
+    ]
+  }
+}

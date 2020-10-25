@@ -18,10 +18,30 @@
 .jumbotron {
   padding: 80px 30px 130px;
   border-radius: 0;
-  background: linear-gradient(to right, #f6830f, rgba(246, 131, 15, 0.604)), url(http://localhost:5000/static/img//shas.png) no-repeat center right fixed;
+  background: linear-gradient(to left, #ca6908, #f6830f9a), url(http://localhost:5000/static/img//shas.png) no-repeat center right fixed;
   background-size: cover;
   color: #070031;
   clip-path: polygon(0 0, 100% 0%, 100% 77%, 0 100%);
+}
+
+.btn-success {
+  background-color: #f6830f9a;
+  color: #3b3b3b;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #fff8cd;
+  color: #3b3b3b;
+}
+
+.btn-info {
+  background-color: #bb2205;
+  color: #fff8cd;
+  border: none;
+}
+.btn-info:hover {
+  background-color: #fff8cd;
+  color: #3b3b3b;
 }
 
 body {
@@ -128,6 +148,35 @@ body {
 }
 .tab-content.isActive {
   display: block;
+}
+
+.hebrew-note {
+  width: 100%;
+  direction: rtl;
+  text-align: right;
+  margin: 40px 20px;
+  padding: 10px 20px;
+  border-bottom: solid 2px #abaca4;
+}
+.hebrew-note .note-header {
+  border-bottom: dotted 1px #abaca4;
+}
+.hebrew-note .note-header h5 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.hebrew-note .note-header .note-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  flex-wrap: wrap;
+}
+.hebrew-note .note-header .note-meta div {
+  flex-grow: 1;
+}
+.hebrew-note p {
+  white-space: pre;
 }
 
 /*# sourceMappingURL=styles.css.map */

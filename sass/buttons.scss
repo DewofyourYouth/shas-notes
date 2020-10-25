@@ -1,0 +1,21 @@
+.btn-success {
+  background-color: $header-orange;
+  color: $grey-txt;
+  border: none;
+
+  &:hover {
+    background-color: $nav-bg;
+    color: $grey-txt;
+  }
+}
+
+.btn-info {
+  background-color: $logo-red;
+  color: $nav-bg;
+  border: none;
+
+  &:hover {
+    background-color: $nav-bg;
+    color: $grey-txt;
+  }
+}

@@ -1,6 +1,4 @@
-{% extends "base.html" %} 
-{% set active_page = "add_note" %}
-{% block content %}
+{% extends "base.html" %} {% set active_page = "add_note" %} {% block content %}
 <div class="container">
   <div class="row">
     <div class="col">
@@ -31,25 +29,38 @@
         <h3>פלפולי אורייתא</h3>
         <hr />
         <h6>שבת דף מב עמוד ב</h6>
-        <form action="">
+        <form action="" method="post" novalidate>
           <div class="form-group">
-            <label for="sugya">סוגיא</label>
-            <input type="text" class="form-control" name="sugya" id="sugya" />
+            {{ form.public() }} {{form.public.label}}
           </div>
           <div class="form-group">
-            <textarea
-              class="form-control hebrew-input"
-              name="note-body"
-              id="note-body"
-              cols="30"
-              rows="10"
-            ></textarea>
+            {{ form.meseches() }} {{ form.daf(value=learning.daf + 1) }}
+          </div>
+          <div class="form-group">
+            {{form.sugya.label}} {{ form.sugya(class="form-control") }} {{
+            form.category(value="pilpul") }}
+            <!-- <input type="text" class="form-control" name="sugya" id="sugya" /> -->
+          </div>
+          <div class="form-row mb-2">
+            <div class="col-md-3">
+              <label for="relates_to">נוגע ל:</label>
+              {{ form.relates_to(class="form-control") }}
+            </div>
+            <div class="col-md-9">
+              {{form.starting_phrase.label}}
+              {{form.starting_phrase(class="form-control")}}
+            </div>
+          </div>
+          <div class="form-group">
+            {{form.content.label}} {{ form.content(class="form-control
+            hebrew-input", rows="10") }}
           </div>
 
           <div class="form-group">
-            <button class="btn btn-lg btn-info">שמור</button>
-            <button class="btn btn-lg btn-warning">מחק</button>
-            <input class="btn btn-lg btn-success" type="submit" value="סיימתי" />
+            <!-- <button class="btn btn-lg btn-info">שמור</button> -->
+            {{ form.submit(class="btn btn-lg btn-info") }}
+            <!-- <button class="btn btn-lg btn-warning">מחק</button>
+            <input class="btn btn-lg btn-success" type="submit" value="סיימתי" /> -->
           </div>
         </form>
       </div>
@@ -74,7 +85,11 @@
           <div class="form-group">
             <button class="btn btn-lg btn-info">שמור</button>
             <button class="btn btn-lg btn-warning">מחק</button>
-            <input class="btn btn-lg btn-success" type="submit" value="סיימתי" />
+            <input
+              class="btn btn-lg btn-success"
+              type="submit"
+              value="סיימתי"
+            />
           </div>
         </form>
       </div>
@@ -100,7 +115,11 @@
           <div class="form-group">
             <button class="btn btn-lg btn-info">שמור</button>
             <button class="btn btn-lg btn-warning">מחק</button>
-            <input class="btn btn-lg btn-success" type="submit" value="סיימתי" />
+            <input
+              class="btn btn-lg btn-success"
+              type="submit"
+              value="סיימתי"
+            />
           </div>
         </form>
       </div>
@@ -126,10 +145,19 @@
           <div class="form-group">
             <button class="btn btn-lg btn-info">שמור</button>
             <button class="btn btn-lg btn-warning">מחק</button>
-            <input class="btn btn-lg btn-success" type="submit" value="סיימתי" />
+            <input
+              class="btn btn-lg btn-success"
+              type="submit"
+              value="סיימתי"
+            />
           </div>
         </form>
       </div>
+      <ul class="notes">
+        {% for note in notes %}
+        <h5>{note.sugya</h5>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </div>

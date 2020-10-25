@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h3>Welcome {{name}}!</h3>
+      <h3>Welcome {{user.firstName}}!</h3>
       <hr />
       {% if learning != [] %}
       <h5>Currently Learning:</h5>
@@ -13,18 +13,39 @@
         <div class="card-body">
           <h3 class="card-title ">{{m.hebName}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{m.pages | gematria }} דפים</h6>
-          <p class="card-text text-muted">{{"%.2f"|format(41/m.pages * 100)}}% נלמד</p>
-          <p class="card-text"></p> אתה לומד דף {{ 41 | daf_gematria }} עמוד ב &nbsp;&nbsp;&nbsp;<button class="btn btn-success">סיימתי</button></p>
+          <p class="card-text text-muted">{{"%.2f"|format(m.daf/m.pages * 100)}}% נלמד</p>
+          <p class="card-text"></p> אתה לומד דף {{ m.daf | daf_gematria }} עמוד ב &nbsp;&nbsp;&nbsp;<button class="btn btn-success">סיימתי</button></p>
           <p class="card-text">
             דוגמא של סדר - כאן תהיה מידע על הדף שבו אתה לומד עכשיו ההערות האחרונות שלך.
           </p>
           <p class="card-text">גם ההערות עם כוכב וכו'</p>
-          <a href="{{url_for('add_note')}}" class="btn btn-info card-link">הוסף הערה</a>
+          <a href="{{url_for('add_note', meseches=m.name, daf=m.daf)}}" class="btn btn-info card-link">הוסף הערה</a>
         </div>
       </div>
 
       {% endfor %} {% endif %}
     </div>
+  </div>
+    <div class="row">
+      <div class="col"><div class="notes">
+    {% for note in notes %}
+    <div class="hebrew-note">
+      <div class="note-header">
+        <div class="note-title">
+
+          <h5>{{note.sugya}}</h5>
+        </div>
+        <div class="note-meta">
+
+          <div>דף {{ note.daf | int | daf_gematria }}</div><div>  {{ note.timestamp | note_date }}</div>
+        </div>
+      </div>
+      
+      <p>{{note.content | truncate(100)}}</p>
+    </div>
+    {% endfor %}</div>
+    </div>
+    
   </div>
 </div>
 
